@@ -1,3 +1,4 @@
+
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
@@ -5,12 +6,16 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+
+  // Ignore generated files, local backups, and build output.
   globalIgnores([
-    // Default ignores of eslint-config-next:
+    ".history/**",
     ".next/**",
     "out/**",
     "build/**",
+    "dist/**",
+    "node_modules/**",
+    ".vercel/**",
     "next-env.d.ts",
   ]),
 ]);
