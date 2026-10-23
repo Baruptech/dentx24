@@ -1,5 +1,5 @@
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import SplashScreen from "./components/splash-screen";
 import "./globals.css";
@@ -15,13 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DentX24 | Your Smile, Our Priority",
+  applicationName: "DentX24",
+  title: {
+    default: "DentX24 | Your Smile, Our Priority",
+    template: "%s | DentX24",
+  },
   description:
     "Discover trusted dental care, find dentists, and manage your dental appointments with DentX24.",
   icons: {
-    icon: "/dentx24-logo.png",
-    apple: "/dentx24-logo.png",
+    icon: [
+      { url: "/dentx24-logo.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/dentx24-logo.png", type: "image/png" },
+    ],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#087ca7",
 };
 
 export default function RootLayout({
