@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "DentX24 | Your Smile, Our Priority",
   description:
     "Discover trusted dental care, find dentists, and manage your dental appointments with DentX24.",
+  icons: {
+    icon: "/dentx24-logo.png",
+    apple: "/dentx24-logo.png",
+  },
 };
 
 export default function RootLayout({
